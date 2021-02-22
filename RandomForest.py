@@ -7,6 +7,9 @@ import sklearn.preprocessing
 from sklearn.neighbors import KNeighborsClassifier
 import seaborn as sns
 
+##############
+#Training on split labelled data and checking accuracy of model
+
 X_train = pd.read_csv('x_train.csv',header=0, index_col=0)
 print(X_train.head())
 
@@ -37,6 +40,10 @@ from sklearn import metrics
 print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
 
 print(clf.predict_proba(X_test))
+
+##############
+
+#Training on all labelled data and predicting unlabelled cases
 
 train_data = pd.read_csv('train_mean_features_labelled.csv',header=0, index_col=0)
 
